@@ -27,8 +27,8 @@ Character.create(
 )
 end
 
-
-get_spells  = RestClient.get('https://www.potterapi.com/v1/spells?key=$2a$10$/zqt2JnFkXCtmuF6Scfvr.qPE4mh6lexsPp1XqP8J3Tql3dxKi5TO')
+potter = ENV["POTTER_API_KEY"]
+get_spells  = RestClient.get(`https://www.potterapi.com/v1/spells?key=#{potter}`)
 
 spells_info = JSON.parse(get_spells)
 
